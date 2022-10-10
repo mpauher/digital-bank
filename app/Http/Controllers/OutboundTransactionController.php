@@ -30,7 +30,7 @@ class OutboundTransactionController extends Controller
 
                 // dd($send_wallet);
 
-                if($send_wallet->current_amount<=$request->outbound_amount){
+                if($send_wallet == null || $send_wallet->current_amount<=$request->outbound_amount){
                     return response()->json([
                         'error'=>'Saldo Insuficiente'
                     ],404);
